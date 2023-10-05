@@ -1,9 +1,12 @@
 from flask import Flask, request
+import flask_cors import CORS
+
 import db_carros
 import traceback
 
-
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route("/carros", methods=["POST"])
 def get_all():
